@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <!-- UOW logging configuration -->
+    <appender name="fileAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>./logs/kafka-offset-lag.log</file>
+        <encoder>
+            <pattern>%-4relative [%thread] %-5level %logger{35} - %msg %n</pattern>
+        </encoder>        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>./logs/ad-repository-updater.log.%d{yyyy-MM-dd}.gz</fileNamePattern>
+            <maxHistory>60</maxHistory>
+        </rollingPolicy>
+    </appender>
+
+    <!-- ad-repository-updater log configuration-->
+    <appender name="consoleAppender" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d %5p \(%F:%L\) %m%n</pattern>
+        </encoder>
+    </appender>
+
+    <logger name="org.eclipse.jetty" additivity="false" level="ERROR" />
+    <logger name="org.springframework" additivity="false" level="WARN" />
+    <logger name="org.hibernate" additivity="false" level="WARN" />
+    <logger name="org.glassfish" additivity="false" level="WARN" />
+
+    <root level="INFO">
+        <appender-ref ref="fileAppender" />
+        <appender-ref ref="consoleAppender" />
+    </root>
+
+</configuration>
