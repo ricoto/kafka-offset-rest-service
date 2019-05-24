@@ -28,7 +28,7 @@ $ mvn clean install
 1. Run as jar
 ```sh
     $ cd /site/kafka-offset-rest-service/target
-    $ java -jar rest-service-1.0-SNAPSHOT.jar
+    $ java -jar rest-service-1.0.jar
 ```
 1. Run KafkaOffsetApplication as java application from IDE (if you using this way to run, you don't need to repackage after changes in application.properties)
 
