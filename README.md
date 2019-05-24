@@ -1,4 +1,4 @@
-# Kafka Offset Rest Service
+# Kafka Offset Lag Checker as Rest Service
 
 ## Getting Started
 Check out kafka-offset-rest-service to the /site directory.
